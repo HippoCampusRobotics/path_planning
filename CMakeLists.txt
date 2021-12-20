@@ -20,6 +20,8 @@ catkin_package()
 catkin_install_python(PROGRAMS
   nodes/setpoint_node
   scripts/create_test_paths.py
+  scripts/generate_ellipse.py
+  scripts/generate_lemniscate.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
