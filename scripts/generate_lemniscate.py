@@ -4,6 +4,7 @@ import numpy as np
 import sys
 import argparse
 import yaml
+import mplcursors
 
 
 def main(args):
@@ -59,11 +60,13 @@ def main(args):
     print(args)
     if args.plot:
         import matplotlib.pyplot as plt
-        i = np.linspace(0.0, 1.0, num=args.n)
+        i = np.linspace(0.0, args.n - 1, num=args.n, dtype=int)
         h = plt.scatter(x, y, marker="v", c=i)
         plt.scatter(x[0], y[0], marker="o")
         plt.gca().set_aspect("equal", adjustable="box")
         plt.colorbar(h)
+        mplcursors.cursor(plt.gca(), hover=True).connect(
+            "add", lambda sel: sel.annotation.set_text(i[sel.index]))
         plt.show()
 
 
