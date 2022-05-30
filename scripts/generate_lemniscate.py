@@ -59,7 +59,7 @@ def main(args):
     print(args)
     if args.plot:
         import matplotlib.pyplot as plt
-        i = np.linspace(0.0, 1.0, num=args.n)
+        i = np.linspace(0, args.n - 1, num=args.n)
         h = plt.scatter(x, y, marker="v", c=i)
         plt.scatter(x[0], y[0], marker="o")
         plt.gca().set_aspect("equal", adjustable="box")
