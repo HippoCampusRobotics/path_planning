@@ -1,6 +1,6 @@
 <launch>
   <node pkg="path_planning"
-        type="setpoint_node.py"
+        type="setpoint_node"
         name="setpoint_node"
         clear_params="true"
         output="screen">
