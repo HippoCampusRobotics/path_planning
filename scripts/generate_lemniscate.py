@@ -50,7 +50,7 @@ def main(args):
         exit(1)
     x += args.xshift
     y += args.yshift
-    z = np.zeros_like(x)
+    z = np.ones_like(x)
     z *= args.z
     data = pg.xyz_to_gantry_yaml(x, y, z)
     f = open("output.yaml", "w")
