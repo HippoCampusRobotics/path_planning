@@ -2,9 +2,8 @@
 
 import rclpy
 from geometry_msgs.msg import Point
-from rclpy.node import Node
-
 from hippo_msgs.srv import SetPath
+from rclpy.node import Node
 
 
 class SetPathNode(Node):
