@@ -2,8 +2,8 @@
 Changelog for package path_planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2024-07-16)
+------------------
 * moved to separate repo
 * ditched yapf
 * added circular path
