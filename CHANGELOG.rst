@@ -2,6 +2,14 @@
 Changelog for package path_planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added missing ament_index_cpp dependency
+* Contributors: Thies Lennart Alff
+
+* added missing ament_index_cpp dependency
+* Contributors: Thies Lennart Alff
+
 1.0.0 (2024-07-16)
 ------------------
 * moved to separate repo
