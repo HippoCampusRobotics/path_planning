@@ -28,6 +28,7 @@ add_compile_options(${CXX_FLAGS})
 ## is used, also find other catkin packages
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(hippo_common REQUIRED)
@@ -120,6 +121,7 @@ target_link_libraries(${component_name} yaml-cpp path_planning)
 ament_target_dependencies(${component_name}
   rclcpp
   rclcpp_components
+  ament_index_cpp
   hippo_common
   hippo_msgs
   geometry_msgs

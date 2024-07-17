@@ -19,6 +19,7 @@
   <depend>rclcpp</depend>
   <depend>rclpy</depend>
   <depend>rclcpp_components</depend>
+  <depend>ament_index_cpp</depend>
   <depend>hippo_common</depend>
   <depend>hippo_msgs</depend>
   <depend>nav_msgs</depend>
