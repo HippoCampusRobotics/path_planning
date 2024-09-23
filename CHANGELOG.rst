@@ -2,6 +2,13 @@
 Changelog for package path_planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added script to convert pathes from yaml to csv for easy plotting in
+  latex
+* added README
+* Contributors: Thies Lennart Alff
+
 1.0.1 (2024-07-17)
 ------------------
 * added missing ament_index_cpp dependency
