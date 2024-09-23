@@ -2,8 +2,8 @@
 Changelog for package path_planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2024-09-23)
+------------------
 * added script to convert pathes from yaml to csv for easy plotting in
   latex
 * added README
