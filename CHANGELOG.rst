@@ -2,8 +2,8 @@
 Changelog for package path_planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2024-10-21)
+------------------
 * make logging more unambiguous
 * fixed indentation
 * added generation script for rectangle
