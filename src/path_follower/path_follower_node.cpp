@@ -34,7 +34,7 @@ PathFollowerNode::PathFollowerNode(rclcpp::NodeOptions const &_options)
   rclcpp::Node::SharedPtr rviz_node = create_sub_node("visualization");
   path_visualizer_ = std::make_shared<path_planning::RvizHelper>(rviz_node);
   DeclareParams();
-  LoadDefaultWaypoints();
+  LoadWaypoints();
   InitServices();
   InitPublishers();
   InitSubscriptions();
@@ -82,22 +82,30 @@ std::string PathFollowerNode::GetWaypointsFilePath() {
     return "";
   }
   file_path += "/config/bernoulli_default.yaml";
+  // make it a warning, because it is very annoying to rather silently load
+  // a default file because something went wrong with setting the appropriate
+  // file_path parameter.
+  RCLCPP_WARN(
+      get_logger(),
+      "Loading default waypoints at [%s] because no file path was provided.",
+      file_path.c_str());
   return file_path;
 }
 
-void PathFollowerNode::LoadDefaultWaypoints() {
+void PathFollowerNode::LoadWaypoints() {
   path_ = std::make_shared<path_planning::Path>();
   std::string file_path = GetWaypointsFilePath();
   try {
     path_->LoadFromYAML(file_path);
   } catch (const YAML::ParserException &) {
-    RCLCPP_ERROR(get_logger(), "Failed to parse default waypoints at [%s]",
+    RCLCPP_ERROR(get_logger(), "Failed to parse waypoints at [%s]",
                  file_path.c_str());
     path_ = nullptr;
     return;
   } catch (const YAML::BadFile &) {
     RCLCPP_ERROR(get_logger(),
-                 "Failed to load default waypoints at [%s]: bad file.",
+                 "Failed to load waypoints at [%s]: bad file. Probably it does "
+                 "not exist.",
                  file_path.c_str());
     path_ = nullptr;
     return;

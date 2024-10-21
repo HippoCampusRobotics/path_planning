@@ -86,7 +86,7 @@ class PathFollowerNode : public rclcpp::Node {
                             const Eigen::Vector3d &normal);
   bool AxisCollidesWithSurface(const Eigen::Vector3d &support_vector,
                                const Eigen::Vector3d &direction_vector);
-  void LoadDefaultWaypoints();
+  void LoadWaypoints();
   std::string GetWaypointsFilePath();
   /**
    * Set desired axis based on statically set ros parameters
